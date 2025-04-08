@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Header from "../components/Header/Header";
-import { MdFilterAlt } from "react-icons/md";
 import { MdSearch } from "react-icons/md";
-import { Link } from "react-router-dom";
-
+import CardBuffet from "../components/CardBuffet/CardBuffet";
+import Footer from "../components/Footer/Footer";
+import Filtro from "../components/Filtro/Filtro";
 const json_bufet = [
   {
     "id": 1,
@@ -51,6 +51,7 @@ const json_bufet = [
 function Home() {
   const [buffetsExibir, setBuffetsExibir] = useState(json_bufet);
   const [nomePesquisa, setNomePesquisa] = useState('');
+  const [isFiltroAberto, setIsFiltroAberto] = useState(false);
   const handleResultPesquisa = () => {
     const buffetsFiltrados = json_bufet.filter((buffet) =>
       buffet.name.toLowerCase().includes(nomePesquisa.toLowerCase())
@@ -78,23 +79,24 @@ function Home() {
                 className="bg-[#022946] text-white font-bold text-[14px] flex justify-center items-center w-[5%] py-[7.3px] rounded-tr-md rounded-br-md cursor-pointer"><MdSearch size={25} /></button>
             </div>
           </div>
-          <div className="flex justify-end">
-            <button className="my-4 text-blue-500 underline text-[14px] px-[2px] cursor-pointer hover:text-blue-700">
+          <div className="flex justify-end relative">
+            <button
+              onClick={() => setIsFiltroAberto(!isFiltroAberto)}
+              className="my-4 text-blue-500 underline text-[14px] px-[2px] cursor-pointer hover:text-blue-700">
               Busca por outros filtros
             </button>
+            {isFiltroAberto && (
+              <Filtro />
+            )}
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4 mb-10">
+        <div className="grid grid-cols-3 pb-2 h-[400px] overflow-y-auto gap-4 mb-10">
           {buffetsExibir.map((buffet) => (
-            <Link to={buffet.link} key={buffet.id} className="bg-white rounded-lg shadow-md p-5">
-              <img src={buffet.image} alt={buffet.name} className="w-full h-[200px] object-cover rounded-t-lg" />
-              <h2 className="text-xl font-bold mt-2">{buffet.name}</h2>
-              <p className="text-gray-600 my-3">{buffet.description}</p>
-              <p className="text-[#022946] font-bold text-[14px]">{buffet.endereco}</p>
-            </Link>
+            <CardBuffet key={buffet.id} buffet={buffet} />
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
