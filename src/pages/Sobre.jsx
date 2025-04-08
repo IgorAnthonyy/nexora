@@ -4,7 +4,7 @@ import logo_nexora from "../assets/logo.png";
 
 const Sobre = () => {
     return (
-        <div>
+        <div className="bg-gray-50">
             <Header />
             <div className="w-[80%] m-auto flex flex-col justify-center items-center mt-10 text-center">
                 <img className="w-[300px]" src={logo_nexora} alt="Logo Nexora" />
@@ -22,24 +22,24 @@ const Sobre = () => {
             {/* Seção de Cards */}
             <div className="w-[80%] m-auto mt-14 mb-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 {/* Card 1 - Valores */}
-                <div className="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
-                    <h3 className="text-2xl font-bold mb-3 text-[#ff007f]">Valores</h3>
+                <div className="bg-white shadow-sm rounded-2xl p-6 hover:shadow-md transition-all duration-300">
+                    <h3 className="text-2xl font-bold mb-3 text-[#022946]">Valores</h3>
                     <p className="text-[16px] text-gray-700">
                         Ética, transparência, comprometimento com resultados e foco total no sucesso dos nossos clientes.
                     </p>
                 </div>
 
                 {/* Card 2 - Missão */}
-                <div className="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
-                    <h3 className="text-2xl font-bold mb-3 text-[#ff007f]">Missão</h3>
+                <div className="bg-white shadow-sm rounded-2xl p-6 hover:shadow-md transition-all duration-300">
+                    <h3 className="text-2xl font-bold mb-3 text-[#022946]">Missão</h3>
                     <p className="text-[16px] text-gray-700">
                         Oferecer soluções tecnológicas e estratégias de marketing que impulsionem o crescimento de buffets de todos os portes.
                     </p>
                 </div>
 
                 {/* Card 3 - Visão */}
-                <div className="bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
-                    <h3 className="text-2xl font-bold mb-3 text-[#ff007f]">Visão</h3>
+                <div className="bg-white shadow-sm rounded-2xl p-6 hover:shadow-md transition-all duration-300">
+                    <h3 className="text-2xl font-bold mb-3 text-[#022946]">Visão</h3>
                     <p className="text-[16px] text-gray-700">
                         Ser referência nacional em tecnologia para buffets, entregando inovação com propósito e excelência.
                     </p>

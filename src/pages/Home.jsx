@@ -59,9 +59,9 @@ function Home() {
     return buffetsFiltrados;
   }
   return (
-    <div>
+    <div className="bg-gray-50">
       <Header />
-      <div className="w-[80%] m-auto flex flex-col justify-center items-center">
+      <div className="w-[80%]  m-auto flex flex-col justify-center items-center">
         <h1 className="text-4xl text-[#022946] font-bold text-center mt-10">Bem-vindo ao Nexora!</h1>
         <p className="text-center mt-5">Aqui você encontrará os melhores buffets para o seu evento.</p>
         <div className='w-full mt-10'>
